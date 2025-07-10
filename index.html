@@ -35,11 +35,17 @@ src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/howler@2.2.3/dist/howler.min.js"></script>
 <script>
       const sonido = new Howl({
-    src: ['https://github.com/Nightdragoon/under_page_night/blob/main/voice_asriel.wav?raw=true'],  // ruta a tu archivo .mp3 o .wav
+    src: ['voice_default.mp3'],  // ruta a tu archivo .mp3 o .wav
+    volume: 0.5,         // volumen entre 0.0 y 1.0
+  });
+  const sonido2 = new Howl({
+    src: ['The Legend.mp3'],  // ruta a tu archivo .mp3 o .wav
     volume: 0.5,         // volumen entre 0.0 y 1.0
   });
 
     $("#botonPrueba").on('click', function(){
+      sonido2.play();
+
         $("#botton").addClass('d-none');
         $("#principal").removeClass('d-none');
             // 2) Arrancamos la primera
@@ -51,23 +57,34 @@ src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
       // 1) Define los textos que quieres mostrar en secuencia
       const mensajes = [
-      "hola viajero",
-      "me recuerdas?",
-      "Todo lo que hicimos y lo que vimos",
-      "todo por un falso sueño de estar juntos",
-      "desearia volver el tiempo solo para poder verte una vez mas ",
-      "sentir lo que sentia contigo" , 
-      "experimentarlo....",
-      "crees que no soy un real que solo soy un sentimiento",
-      "pero no es asi ",
-      "soy tan real como tu ",
-      "te hablo a ti",
-      "....",
-      "tu avanzaste yo",
-      "yo estoy perdido en el tiempo"
+  "Había una vez tres chicos, todos perdidos en el mundo.",
 
-    ];
-    const velocidad = 70;    // milisegundos entre carácter
+  "El Programador – capaz de crear cualquier cosa con solo teclear… pero con un hueco en el pecho: `Error: CORAZÓN no encontrado`.",
+
+  "El Científico – portador de un corazón tan grande que jamás dejaría a nadie atrás.",
+
+  "La Guerrera – tan fuerte que nada podía derribarla.",
+
+  "A ojos de muchos eran invencibles; sin embargo, cada día cargaban problemas más pesados:",
+
+  "El Programador sentía que el amor le quedaba cada vez más lejos.",
+
+  "El Científico se perdía entre preguntas que nadie más podía responder.",
+
+  "La Guerrera luchaba contra sombras que ni su espada alcanzaba.",
+
+  "Por azares del destino, los tres héroes coincidieron. Eran tan distintos que al principio chocaron: la Guerrera, a veces, era dura con el Programador; pero él sabía que esa dureza nacía del cariño. Y cuando alguna lágrima asomaba, dolía más que cualquier herida.",
+
+  "Esta no es una historia normal; es una carta disfrazada de cuento.",
+
+  "Porque yo –el Programador– solo quiero decirles a mis dos mejores amigos algo sencillo y gigante:",
+
+  "Los quiero más de lo que cualquier línea de código puede expresar.",
+
+  "Gracias por ser mis compañeros de aventura. Que sigamos juntos, aun cuando el mundo parezca un laberinto sin salida."
+];
+
+    const velocidad = 40;    // milisegundos entre carácter
     let indice = 0;          // texto actual
 
     function comenzarEscritura() {
